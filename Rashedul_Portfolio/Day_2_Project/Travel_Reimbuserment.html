@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Reimbursement</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header with logo -->
+    <header class="center">
+        <img src="qcc_logo.png" alt="QCC Logo" class="logo header-logo">
+    </header>
+
+    <main class="form-container">
+        <!-- Checklist Section -->
+        <section id="checklist-section">
+            <h1 class="form-title">Out-of-Town Travel Expense Voucher Documentation Checklist</h1>
+            <form id="checklist-form" autocomplete="off">
+                <fieldset>
+                    <legend>Required Documentation/Information</legend>
+                    <ul class="checklist">
+                        <li>
+                            <label>
+                                <input type="checkbox" name="presentation" required>
+                                Documentation in support of your Presentation/Attendance with your name and the QCC Affiliation (e.g., conference program, brochure, schedule, flyer, agenda)
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="boarding" required>
+                                Boarding Passes and email confirmation for airline or rail ticket with detail information and amount paid
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="hotel" required>
+                                Hotel Receipt – Itemized
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="meals" required>
+                                Meal Receipts – Must be itemized, i.e. breakfast, lunch, dinner and dated
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="conference" required>
+                                Conference Registration Receipt
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="odometer" required>
+                                Automobile Travel – Odometer Readings – Must have Initial Read and Final Read
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="mapquest" required>
+                                Automobile Travel – MapQuest to show miles per trip if a personal vehicle was used for travel
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="foreign" required>
+                                Foreign Travel Expenses should be converted to American dollars, based on the exchange rate in effect during the period of travel
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="other" id="other-checkbox">
+                                Other
+                            </label>
+                        </li>
+                    </ul>
+                    <div id="other-details-container" style="display:none; margin-left:32px; margin-top:4px;">
+                        <input type="text" name="other-details" class="other-details" placeholder="Please specify if Other">
+                    </div>
+                </fieldset>
+                <div class="center">
+                    <button type="button" id="to-expenses-btn" class="submit-btn">Next</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Expenses Voucher Section (hidden initially) -->
+        <section id="expenses-section" style="display:none;">
+            <h1 class="form-title">OUT-OF-TOWN TRAVEL EXPENSE VOUCHER</h1>
+            <form id="voucher-form" autocomplete="off">
+                <!-- Personal Info -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">* Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">* Title</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="department">* Department</label>
+                        <input type="text" id="department" name="department" required>
+                    </div>
+                </div>
+
+                <!-- Home Address -->
+                <fieldset>
+                    <legend>* Home Address</legend>
+                    <div class="form-group">
+                        <label for="home-address1">Address Line 1</label>
+                        <input type="text" id="home-address1" name="home-address1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="home-address2">Address Line 2</label>
+                        <input type="text" id="home-address2" name="home-address2">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="home-city">City</label>
+                            <input type="text" id="home-city" name="home-city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="home-state">State</label>
+                            <select id="home-state" name="home-state" required>
+                                <option value="">Select State</option>
+                                <option value="NY">NY</option>
+                                <option value="NJ">NJ</option>
+                                <!-- ... -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="home-zip">ZipCode</label>
+                            <input type="text" id="home-zip" name="home-zip" required>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Destination Address -->
+                <fieldset>
+                    <legend>* Destination Address</legend>
+                    <div class="form-group">
+                        <label for="dest-address1">Address Line 1</label>
+                        <input type="text" id="dest-address1" name="dest-address1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dest-address2">Address Line 2</label>
+                        <input type="text" id="dest-address2" name="dest-address2">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dest-city">City</label>
+                            <input type="text" id="dest-city" name="dest-city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dest-state">State</label>
+                            <select id="dest-state" name="dest-state" required>
+                                <option value="">Select State</option>
+                                <option value="NY">NY</option>
+                                <option value="NJ">NJ</option>
+                                <!-- ... -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dest-zip">ZipCode</label>
+                            <input type="text" id="dest-zip" name="dest-zip" required>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Departure and Arrival Record -->
+                <fieldset>
+                    <legend>Departure and Arrival Record</legend>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="departure-date">Departure Date</label>
+                            <input type="date" id="departure-date" name="departure-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="departure-time">Departure Time</label>
+                            <input type="time" id="departure-time" name="departure-time" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="departure-city">Departure City</label>
+                            <input type="text" id="departure-city" name="departure-city" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="arrival-date">Arrival Date</label>
+                            <input type="date" id="arrival-date" name="arrival-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="arrival-time">Arrival Time</label>
+                            <input type="time" id="arrival-time" name="arrival-time" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="arrival-city">Arrival City</label>
+                            <input type="text" id="arrival-city" name="arrival-city" required>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Daily Itemized Expenses -->
+                <fieldset>
+                    <legend>Daily Itemized Expenses (Please Attach Original Receipts)</legend>
+                    <table id="expenses-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Air/Rail Ticket ($)</th>
+                                <th>Hotel ($)</th>
+                                <th>Breakfast ($)</th>
+                                <th>Lunch ($)</th>
+                                <th>Dinner ($)</th>
+                                <th>Bus/Taxi/Parking ($)</th>
+                                <th>Daily Total ($)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Rows will be added dynamically -->
+                        </tbody>
+                    </table>
+                    <button type="button" id="add-expense-row" class="add-row-btn">Add Day</button>
+                </fieldset>
+
+                <!-- Auto Travel -->
+                <fieldset>
+                    <legend>Auto Travel - Odometer Reading</legend>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="initial-miles">Initial (Miles)</label>
+                            <input type="number" id="initial-miles" name="initial-miles" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="final-miles">Final Reading (Miles)</label>
+                            <input type="number" id="final-miles" name="final-miles" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="toll-charge">Toll Charge ($)</label>
+                            <input type="number" id="toll-charge" name="toll-charge" min="0" step="0.01" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="total-miles">Total Miles</label>
+                            <input type="text" id="total-miles" name="total-miles" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="final-auto-travel">Final Auto Travel ($)</label>
+                            <input type="text" id="final-auto-travel" name="final-auto-travel" readonly>
+                            <small>Note: Final Auto Travel = (Total Miles × 70 cents per mile) + Tolls (Receipts Required)</small>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Totals -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="grand-total">Grand Total ($)</label>
+                        <input type="text" id="grand-total" name="grand-total" readonly>
+                    </div>
+                </div>
+
+                <!-- Certification and Receipts -->
+                <fieldset>
+                    <legend>Certification</legend>
+                    <p>
+                        The above amount of expenditures is an accurate statement of disbursement made by me and is necessary in the performance of my duties. The balance stated is due to me. Enclosed are original receipts.
+                    </p>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="signature-canvas">* Signature of Traveler</label>
+                            <canvas id="signature-canvas" width="300" height="100" style="border:1px solid #bbb; border-radius:4px; background:#fff;"></canvas>
+                            <button type="button" id="clear-signature" style="margin-top:6px;">Clear Signature</button>
+                            <small>Use your mouse or finger to draw your signature above</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="receipts">* Please Upload all Receipts</label>
+                            <input type="file" id="receipts" name="receipts" multiple>
+                            <label for="date-submitted" style="margin-top:12px;">* Date Submitted</label>
+                            <input type="text" id="date-submitted" name="date-submitted" readonly>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="center">
+                    <button type="submit" class="submit-btn">Submit</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer with logo -->
+    <footer class="center">
+        <img src="qcc_logo.png" alt="QCC Logo" class="logo footer-logo">
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

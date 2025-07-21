@@ -1,0 +1,47 @@
+
+body {
+    background-color: rgb(ff, ff, ff);
+    margin: 0;
+}
+
+h1 {
+    color:rgb(00, 00, 00);
+    text-decoration: wavy;
+    font-size: x-large;
+}
+
+#main-text {
+    font-size: 50px;
+    margin-bottom: 10px; /* or 0 if you want no gap at all */
+}
+
+.center {
+    text-align: center;
+}
+
+#main-image{
+    height: 300px;
+    width: auto;
+    margin-top: 0;
+}
+
+.link {
+    text-decoration: none;
+}
+
+* Standard logo styles */
+.logo {
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Larger logo for header */
+.header-logo {
+    width: 300px;   /* Adjust as needed for standard large size */
+}
+
+/* Smaller logo for footer */
+.footer-logo {
+    width: 150px;   /* Adjust as needed for standard small size */
+}

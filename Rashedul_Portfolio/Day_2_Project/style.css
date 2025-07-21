@@ -1,0 +1,191 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7f9fa;
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
+
+header, footer {
+    background: #003366;
+    padding: 16px 0;
+}
+
+.logo {
+    height: 60px;
+}
+
+.header-logo {
+    display: block;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    display: block;
+    margin: 0 auto;
+    height: 40px;
+}
+
+.form-container {
+    max-width: 900px;
+    margin: 32px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 32px 24px;
+}
+
+.form-title {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 24px;
+}
+
+fieldset {
+    border: 1px solid #cfd8dc;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 18px 20px 12px 20px;
+    background: #f5f8fa;
+}
+
+legend {
+    font-weight: bold;
+    color: #003366;
+    padding: 0 8px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 12px;
+}
+
+.form-group {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+select {
+    padding: 7px 10px;
+    border: 1px solid #b0bec5;
+    border-radius: 4px;
+    font-size: 1em;
+    background: #fff;
+    margin-bottom: 2px;
+}
+
+input[readonly] {
+    background: #e3eaf0;
+    color: #555;
+}
+
+input[type="file"] {
+    margin-top: 6px;
+}
+
+.checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.checklist li {
+    margin-bottom: 8px;
+}
+
+.center {
+    text-align: center;
+}
+
+.submit-btn, .add-row-btn {
+    background: #003366;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 28px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background 0.2s;
+}
+
+.submit-btn:hover, .add-row-btn:hover {
+    background: #00509e;
+}
+
+#expenses-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+#expenses-table th, #expenses-table td {
+    border: 1px solid #b0bec5;
+    padding: 7px 5px;
+    text-align: center;
+    background: #fff;
+}
+
+#expenses-table th {
+    background: #e3eaf0;
+    color: #003366;
+    font-weight: 600;
+}
+
+#expenses-table td input[type="number"],
+#expenses-table td input[type="date"] {
+    width: 90px;
+    margin: 0;
+}
+
+#expenses-table td input.daily-total {
+    background: #e3eaf0;
+    border: none;
+    width: 90px;
+}
+
+.remove-row {
+    background: #e53935;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 0.95em;
+}
+
+.remove-row:hover {
+    background: #b71c1c;
+}
+
+small {
+    color: #666;
+    font-size: 0.95em;
+}
+
+@media (max-width: 900px) {
+    .form-container {
+        padding: 12px 2vw;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    #expenses-table th, #expenses-table td {
+        font-size: 0.95em;
+        padding: 4px 2px;
+    }
+}

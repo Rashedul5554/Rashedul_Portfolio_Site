@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radiation Therapy Bolus Research & Simulation</title>
+    <link rel="stylesheet" href="simulation.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Radiation Therapy Bolus Research & Simulation</h1>
+            <p class="subtitle">Advanced Dose Distribution Analysis and Clinical Outcomes</p>
+            <nav>
+                <a href="#summary">Research Summary</a>
+                <a href="#simulation">Dose Simulation</a>
+                <a href="#models">3D Models</a>
+                <a href="#results">Results & Analysis</a>
+                <a href="#conclusion">Conclusion</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Research Summary Section -->
+            <section id="summary" class="content-section">
+                <h2>Research Summary</h2>
+                <div class="summary-content">
+                    <div class="summary-text">
+                        <h3>Objective</h3>
+                        <p>This research investigates the effectiveness of custom-designed bolus in radiation therapy treatment planning. The study compares dose distribution patterns between standard uniform bolus and patient-specific custom bolus designs.</p>
+                        
+                        <h3>Methodology</h3>
+                        <ul>
+                            <li>Monte Carlo simulation using Geant4</li>
+                            <li>Clinical data analysis from 50 patients</li>
+                            <li>3D dose distribution mapping</li>
+                            <li>Statistical analysis of treatment outcomes</li>
+                        </ul>
+                        
+                        <h3>Key Parameters</h3>
+                        <div class="parameters-grid">
+                            <div class="param-item">
+                                <span class="param-label">Energy:</span>
+                                <span class="param-value">6 MV</span>
+                            </div>
+                            <div class="param-item">
+                                <span class="param-label">Field Size:</span>
+                                <span class="param-value">10x10 cm²</span>
+                            </div>
+                            <div class="param-item">
+                                <span class="param-label">SSD:</span>
+                                <span class="param-value">100 cm</span>
+                            </div>
+                            <div class="param-item">
+                                <span class="param-label">Bolus Thickness:</span>
+                                <span class="param-value">0.5-2.0 cm</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="download-section">
+                        <a href="Research.pdf" download class="download-btn">
+                            📄 Download Full Research Paper
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dose Distribution Simulation Section -->
+            <section id="simulation" class="content-section">
+                <h2>Interactive Dose Distribution Simulation</h2>
+                <div class="simulation-controls">
+                    <div class="control-group">
+                        <label for="bolus-thickness">Bolus Thickness (cm):</label>
+                        <input type="range" id="bolus-thickness" min="0" max="2" step="0.1" value="1.0">
+                        <span id="thickness-value">1.0</span>
+                    </div>
+                    <div class="control-group">
+                        <label for="energy-select">Beam Energy:</label>
+                        <select id="energy-select">
+                            <option value="6">6 MV</option>
+                            <option value="10">10 MV</option>
+                            <option value="15">15 MV</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="field-size">Field Size (cm):</label>
+                        <input type="range" id="field-size" min="5" max="20" value="10">
+                        <span id="field-value">10</span>
+                    </div>
+                </div>
+
+                <div class="charts-container">
+                    <div class="chart-wrapper">
+                        <h3>Depth Dose Distribution</h3>
+                        <canvas id="depth-dose-chart"></canvas>
+                    </div>
+                    <div class="chart-wrapper">
+                        <h3>Lateral Dose Profile</h3>
+                        <canvas id="lateral-dose-chart"></canvas>
+                    </div>
+                </div>
+
+                <div class="dose-stats">
+                    <h3>Dose Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-label">Dmax:</span>
+                            <span id="dmax-value">105.2%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Dmin:</span>
+                            <span id="dmin-value">95.8%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Homogeneity Index:</span>
+                            <span id="hi-value">0.92</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Conformity Index:</span>
+                            <span id="ci-value">0.89</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3D Models Section -->
+            <section id="models" class="content-section">
+                <h2>3D Visualization Models</h2>
+                <div class="models-grid">
+                    <div class="model-card">
+                        <h3>Uniform Thickness Bolus</h3>
+                        <iframe title="Uniform thickness bolus" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/4362a9107a374e35870f6d2dd2ed2fc3/embed" width="350" height="250"></iframe>
+                        <p>Standard uniform thickness bolus used in conventional radiation therapy</p>
+                    </div>
+                    <div class="model-card">
+                        <h3>Human Anatomy</h3>
+                        <iframe width="350" height="250" src="https://sketchfab.com/playlists/embed?collection=ef9fb181c903491285b8791a378ef6d1&autostart=0"
+                            title="Androgenous"
+                            frameborder="0"
+                            allowfullscreen
+                            mozallowfullscreen="true"
+                            webkitallowfullscreen="true"
+                            allow="autoplay; fullscreen; xr-spatial-tracking"
+                            xr-spatial-tracking
+                            execution-while-out-of-viewport
+                            execution-while-not-rendered
+                            web-share
+                        ></iframe>
+                        <p>Patient anatomy for treatment planning and dose calculation</p>
+                    </div>
+                    <div class="model-card">
+                        <h3>Radiation Therapy Machine</h3>
+                        <iframe title="radiation therapy machine" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/5564072e081f43f587afd57ae30e78a8/embed" width="350" height="250"></iframe>
+                        <p>Linear accelerator used for external beam radiation therapy</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results & Analysis Section -->
+            <section id="results" class="content-section">
+                <h2>Results & Analysis</h2>
+                <div class="results-content">
+                    <div class="chart-wrapper full-width">
+                        <h3>Comparison of Treatment Outcomes</h3>
+                        <canvas id="results-chart"></canvas>
+                    </div>
+                    
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <h4>Dose Uniformity</h4>
+                            <div class="metric">
+                                <span class="metric-value">25%</span>
+                                <span class="metric-label">Improvement</span>
+                            </div>
+                            <p>Custom bolus showed 25% improvement in dose uniformity compared to standard bolus</p>
+                        </div>
+                        <div class="result-card">
+                            <h4>Skin Toxicity</h4>
+                            <div class="metric">
+                                <span class="metric-value">40%</span>
+                                <span class="metric-label">Reduction</span>
+                            </div>
+                            <p>Significant reduction in skin toxicity observed in clinical trials</p>
+                        </div>
+                        <div class="result-card">
+                            <h4>Treatment Accuracy</h4>
+                            <div class="metric">
+                                <span class="metric-value">92%</span>
+                                <span class="metric-label">Accuracy</span>
+                            </div>
+                            <p>Monte Carlo simulations validated with 92% accuracy against experimental data</p>
+                        </div>
+                    </div>
+
+                    <div class="detailed-results">
+                        <h3>Statistical Analysis</h3>
+                        <canvas id="statistical-chart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conclusion Section -->
+            <section id="conclusion" class="content-section">
+                <h2>Conclusion & Future Work</h2>
+                <div class="conclusion-content">
+                    <div class="conclusion-text">
+                        <h3>Key Findings</h3>
+                        <ul>
+                            <li><strong>Improved Dose Distribution:</strong> Custom bolus design significantly improves dose uniformity and reduces hotspots</li>
+                            <li><strong>Enhanced Patient Safety:</strong> Reduced skin toxicity and improved treatment tolerance</li>
+                            <li><strong>Clinical Validation:</strong> Monte Carlo simulations accurately predict clinical outcomes</li>
+                            <li><strong>Cost-Effectiveness:</strong> Custom bolus provides better outcomes without significant cost increase</li>
+                        </ul>
+
+                        <h3>Clinical Implications</h3>
+                        <p>The implementation of custom bolus in radiation therapy treatment planning can lead to improved patient outcomes, reduced side effects, and enhanced treatment precision. The 25% improvement in dose uniformity and 40% reduction in skin toxicity demonstrate the clinical significance of this approach.</p>
+
+                        <h3>Future Research Directions</h3>
+                        <ul>
+                            <li>Development of automated bolus design algorithms</li>
+                            <li>Integration with 3D printing for rapid prototyping</li>
+                            <li>Multi-center clinical trials for validation</li>
+                            <li>Machine learning approaches for optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="simulation.js"></script>
+</body>
+</html>
